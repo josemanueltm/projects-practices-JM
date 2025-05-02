@@ -1,0 +1,37 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* NAVBAR */
+.navbar {
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(46, 46, 46);
+  position: fixed;
+  width: 100%;
+
+  .list-navbar {
+    display: flex;
+    list-style: none;
+    padding: 0.5em 0.3em;
+  }
+
+  .list-navbar li a {
+    color: rgb(223, 223, 223);
+    margin-right: 20px;
+  }
+
+  .list-navbar li a:hover {
+    color: rgb(138, 138, 138);
+    transition: ease 0.5s;
+  }
+
+  .logo-name {
+    color: rgb(223, 223, 223);
+  }
+}
