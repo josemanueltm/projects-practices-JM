@@ -5,6 +5,16 @@
   box-sizing: border-box;
 }
 
+/* GENERAL STYLES */
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 /* NAVBAR */
 .navbar {
   padding: 0.5em;
@@ -12,7 +22,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: rgb(46, 46, 46);
-  position: fixed;
+  /*position: fixed;*/
   width: 100%;
 
   .list-navbar {
@@ -34,4 +44,32 @@
   .logo-name {
     color: rgb(223, 223, 223);
   }
+}
+
+/* ABOUT */
+
+.about-container {
+  background-color: azure;
+  display: flex;
+  height: 40vh;
+  flex-direction: column;
+  text-align: center;
+}
+
+.about-container h3 {
+  font-size: 25px;
+  margin: 20px;
+}
+
+/*TechStack*/
+.tech {
+  padding: 35px 70px;
+}
+
+.tech-container,
+.tech-img {
+  display: flex;
+  padding: 1em;
+  justify-content: space-between;
+  align-items: center;
 }

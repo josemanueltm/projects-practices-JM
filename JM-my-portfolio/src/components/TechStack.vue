@@ -1,8 +1,22 @@
 <template>
-  <h3>Tecnologías</h3>
-  <span>HTML5</span>
-  <span>CSS3</span>
-  <span>Javascript</span>
-  <span>Vue.js</span>
-  <span>Node.js</span>
+  <section id="tech">
+    <h3>Tecnologías</h3>
+    <div class="tech-container">
+      <div class="tech-img">
+        <span>HTML5</span>
+      </div>
+      <div class="tech-img">
+        <span>CSS3</span>
+      </div>
+      <div class="tech-img">
+        <span>Javascript</span>
+      </div>
+      <div class="tech-img">
+        <span>Vue.js</span>
+      </div>
+      <div class="tech-img">
+        <span>Node.js</span>
+      </div>
+    </div>
+  </section>
 </template>
