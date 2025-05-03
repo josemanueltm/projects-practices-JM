@@ -7,6 +7,7 @@ import Contact from './components/Contact.vue'
 import Projects from './components/Projects.vue'
 </script>
 
+
 <template>
   <div>
     <Header />

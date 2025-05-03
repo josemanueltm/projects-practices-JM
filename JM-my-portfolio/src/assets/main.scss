@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* RESET */
 * {
   margin: 0;
@@ -62,8 +66,16 @@ html {
 }
 
 /*TechStack*/
-.tech {
-  padding: 35px 70px;
+
+#tech {
+  background-color: azure;
+  height: 40vh;
+}
+
+.tech-title {
+  font-size: 25px;
+  margin: 20px;
+  text-align: center;
 }
 
 .tech-container,
@@ -72,4 +84,37 @@ html {
   padding: 1em;
   justify-content: space-between;
   align-items: center;
+  font-size: 20px;
+  margin: 20px;
+}
+
+.tech-img i {
+  font-size: 60px;
+  padding: 0.3em;
+}
+
+.tech-img div {
+  padding: 1em;
+}
+
+.tech-img {
+  flex-direction: column;
+}
+
+/*Projects*/
+#projects {
+  background-color: azure;
+}
+
+.projects-title {
+  font-size: 25px;
+  margin: 20px;
+  text-align: center;
+}
+
+.projects-container {
+  text-align: center;
+  font-size: 20px;
+  margin: 20px;
+  height: 40vh;
 }
