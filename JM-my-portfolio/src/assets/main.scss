@@ -115,7 +115,7 @@ html {
   background-color: var(--card-color);
   padding: 4rem 2rem;
   border-radius: 1rem;
-  box-shadow: 0 0 15px rgba(139, 92, 246, 0.1);
+  box-shadow: 0 0 15px var(--secondary-color);
   max-width: 800px;
   margin: 3rem auto;
   text-align: center;
@@ -131,6 +131,38 @@ p {
   font-size: 1.1rem;
   color: var(--text-color);
   line-height: 1.6;
+}
+
+.button-about-container {
+  margin: 15px;
+}
+
+.button-about-container button {
+  background-color: var(--card-color);
+  color: var(--text-color);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--highlight-color);
+}
+
+.button-about-container button:hover {
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 10px var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.cv-container {
+  margin: 20px;
+}
+
+.download-btn {
+  background-color: var(--card-color);
+  color: var(--text-color);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--highlight-color);
 }
 
 /*TechStack*/

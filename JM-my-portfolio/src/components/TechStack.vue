@@ -1,6 +1,8 @@
 <template>
   <section class="section-block" id="tech">
-    <h3 class="tech-title">Tecnologías</h3>
+    <h3 class="tech-title">
+      < Mis habilidades />
+    </h3>
     <div class="tech-container">
       <div class="tech-img">
         <i class="fa-brands fa-html5"></i>
