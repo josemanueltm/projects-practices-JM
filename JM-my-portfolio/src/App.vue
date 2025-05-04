@@ -11,10 +11,9 @@ import Projects from './components/Projects.vue'
 <template>
   <div>
     <Header />
-    <Home />
     <About />
-    <TechStack />
     <Projects />
+    <TechStack />
     <Contact />
   </div>
 

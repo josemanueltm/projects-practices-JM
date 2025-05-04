@@ -12,7 +12,8 @@
       <button>Desarrollador de Videojuegos</button>
       <div class="cv-container">
         <a href="/CV-Josemanuel-TorresMena.pdf" class="download-btn" download>
-          <i class="fas fa-download"></i> Descargar CV
+          <i class="fas fa-download"></i>
+          <span> Descargar CV</span>
         </a>
       </div>
 

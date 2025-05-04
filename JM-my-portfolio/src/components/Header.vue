@@ -25,7 +25,7 @@ export default {
 <template>
   <header>
     <nav class="navbar">
-      <h1 class="logo-name">José Manuel Torres Mena</h1>
+      <h1 class="logo-name"></h1>
       <ul class="nav-links">
         <li v-for="link in links" :key="link.name">
           <a :href="link.href" :class="{ active: active === link.name }" @click.provent="setActive(link.name)">
@@ -36,7 +36,7 @@ export default {
       </ul>
       <div class="controls">
         <button class="dark-mode-btn">
-          🌙
+          <p>🌙</p>
         </button>
         <div class="language-switch">
           <span>🇪🇸 ES</span>
