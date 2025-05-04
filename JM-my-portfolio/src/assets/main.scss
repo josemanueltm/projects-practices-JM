@@ -1,6 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --primary-color: #c430db;
+  --secondary-color: #8b5cf6;
+  --text-color: #e5e5e5;
+  --background-color: #0f0f0f;
+  --card-color: #1a1a1a;
+  --muted-color: #a3a3a3;
+  --border-color: #27272a;
+  --highlight-color: #f472b6;
+}
 
 /* RESET */
 * {
@@ -11,8 +18,9 @@
 
 /* GENERAL STYLES */
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  line-height: 1.6;
+  background-color: var(--background-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
 }
 
 html {
@@ -21,100 +29,159 @@ html {
 
 /* NAVBAR */
 .navbar {
-  padding: 0.5em;
+  background-color: var(--card-color);
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(46, 46, 46);
-  /*position: fixed;*/
-  width: 100%;
+  box-shadow: 0 4px 6px rgba(217, 70, 239, 0.15);
+
+  .logo-name {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
 
   .list-navbar {
     display: flex;
+    gap: 1.5rem;
     list-style: none;
-    padding: 0.5em 0.3em;
   }
 
-  .list-navbar li a {
-    color: rgb(223, 223, 223);
-    margin-right: 20px;
+  a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
   }
 
-  .list-navbar li a:hover {
-    color: rgb(138, 138, 138);
-    transition: ease 0.5s;
-  }
-
-  .logo-name {
-    color: rgb(223, 223, 223);
+  a:hover {
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
   }
 }
 
 /* ABOUT */
 
-.about-container {
-  background-color: azure;
-  display: flex;
-  height: 40vh;
-  flex-direction: column;
+#about {
+  background-color: var(--card-color);
+  padding: 4rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.1);
+  max-width: 800px;
+  margin: 3rem auto;
   text-align: center;
 }
 
-.about-container h3 {
-  font-size: 25px;
-  margin: 20px;
+h3 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
 /*TechStack*/
 
 #tech {
-  background-color: azure;
-  height: 40vh;
+  background-color: var(--light-color);
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
 .tech-title {
-  font-size: 25px;
-  margin: 20px;
-  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
 }
 
-.tech-container,
+.tech-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
 .tech-img {
   display: flex;
-  padding: 1em;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  font-size: 20px;
-  margin: 20px;
+  width: 120px;
 }
 
 .tech-img i {
-  font-size: 60px;
-  padding: 0.3em;
+  font-size: 3rem;
+  color: var(--primary-color);
 }
 
-.tech-img div {
-  padding: 1em;
+.tech-img span {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: var(--dark-color);
 }
 
-.tech-img {
-  flex-direction: column;
-}
 
 /*Projects*/
 #projects {
-  background-color: azure;
+  padding: 4rem 2rem;
+
+
+  .projects-title {
+    font-size: 2rem;
+    margin: 2rem;
+    padding: 15px;
+    text-align: center;
+    color: var(--primary-color);
+    background-color: var(--light-color);
+    border-radius: 1rem;
+
+  }
+
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+
+    .project-card {
+      background-color: var(--accent-color);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+
+      h4 {
+        font-size: 1.2rem;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        color: var(--text-color);
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
+      }
+    }
+  }
+
+
 }
 
-.projects-title {
-  font-size: 25px;
-  margin: 20px;
-  text-align: center;
-}
 
-.projects-container {
-  text-align: center;
-  font-size: 20px;
-  margin: 20px;
-  height: 40vh;
+
+/* LAYOUT GENERAL */
+
+.section-block {
+  background-color: var(--card-color);
+  padding: 3rem 2rem;
+  margin: 3rem auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.1);
 }
