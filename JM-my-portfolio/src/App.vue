@@ -12,8 +12,8 @@ import Projects from './components/Projects.vue'
   <div>
     <Header />
     <About />
-    <Projects />
     <TechStack />
+    <Projects />
     <Contact />
   </div>
 
