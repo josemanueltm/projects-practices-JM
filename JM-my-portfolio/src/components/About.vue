@@ -10,13 +10,22 @@
       <button>Desarrollador Web</button>
       <button>Técnico MicroInformático</button>
       <button>Desarrollador de Videojuegos</button>
-      <div class="cv-container">
-        <a href="/CV-Josemanuel-TorresMena.pdf" class="download-btn" download>
-          <i class="fas fa-download"></i>
-          <span> Descargar CV</span>
-        </a>
-      </div>
-
+    </div>
+    <div class="cv-container">
+      <a href="/CV-Josemanuel-TorresMena.pdf" class="download-btn" download>
+        <i class="fas fa-download"></i>
+        <span> Descargar CV</span>
+      </a>
+    </div>
+    <div class="social-icons-container">
+      <a href="https://www.linkedin.com/in/josemanueltorresmena/" target="_blank" aria-label="LinkedIn"
+        class="social-icons">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/josemanueltm/projects-practices-JM" target="_blank" aria-label="GitHun"
+        class="social-icons">
+        <i class="fab fa-github"></i>
+      </a>
     </div>
   </section>
 </template>
