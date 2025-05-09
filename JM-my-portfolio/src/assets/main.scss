@@ -10,6 +10,19 @@
   --highlight-color: #f472b6;
 }
 
+body:not(.dark-mode) {
+  --primary-color: #b297e0;
+  --light-color: #ffffff;
+  --secondary-color: #5707d8;
+  --text-color: #2b2b2b;
+  --background-color: #e9e9e9;
+  --card-color: #e7e7e7;
+  --muted-color: #b85151;
+  --border-color: #cdd3e2;
+  --highlight-color: #d946ef;
+}
+
+
 /* RESET */
 * {
   margin: 0;
@@ -22,6 +35,7 @@ body {
   background-color: var(--background-color);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 html {
@@ -87,6 +101,7 @@ html {
     gap: 0.75rem;
   }
 
+
   .dark-mode-btn {
     font-size: 20px;
     background: radial-gradient(circle, #6b21a8, #581c87);
@@ -97,6 +112,7 @@ html {
     height: 40px;
     cursor: pointer;
   }
+
 
   .language-switch {
     font-size: 20px;
@@ -110,6 +126,22 @@ html {
     font-weight: bold;
     cursor: pointer;
     gap: 1rem;
+  }
+
+  .lang-flag-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .flag-icon {
+    width: 24px;
+    height: 16px;
+    object-fit: contain;
+    border-radius: 2px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
   }
 }
 

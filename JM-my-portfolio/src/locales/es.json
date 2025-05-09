@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "darkMode": {
+    "light": "☀️",
+    "dark": "🌙"
+  }
+}

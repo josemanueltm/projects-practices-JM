@@ -1,8 +1,20 @@
 import './assets/main.scss'
-import "tailwindcss"
 
-
-import { createApp } from 'vue'
 import App from './App.vue'
+import { createApp } from 'vue'
+import { createI18n } from 'vue-i18n'
 
-createApp(App).mount('#app')
+import es from './locales/es.json'
+import en from './locales/en.json'
+
+
+
+const i18n = createI18n({
+  locale: 'es',
+  fallbackLocale: 'en',
+  messages: { es, en },
+})
+
+
+
+createApp(App).use(i18n).mount('#app')
