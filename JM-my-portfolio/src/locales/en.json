@@ -9,5 +9,70 @@
   "darkMode": {
     "light": "☀️",
     "dark": "🌙"
+  },
+  "about": {
+    "title": "José Manuel Torres Mena",
+    "description": "I am a Junior developer with a web development certificate, with training in video game development and microcomputer systems and networks. I really like Backend and Frontend. I have done several projects with Express.js and also with Vue.js.",
+    "webDeveloper": "Web Developer",
+    "microcomputerTechnician": "Microcomputer Technician",
+    "gameDeveloper": "Game Developer",
+    "downloadCV": "Download CV"
+  },
+  "techstack": {
+    "title": "< My Skills />",
+    "subtitle": "Technologies I work with",
+    "categories": {
+      "webDevelopment": "Web Development",
+      "frameworks": "Frameworks and Libraries",
+      "others": "Others"
+    },
+    "levels": {
+      "avanzado": "Advanced",
+      "medio": "Intermediate"
+    },
+    "labels": {
+      "description": "Description",
+      "experience": "Experience",
+      "relatedProjects": "Related Projects"
+    },
+    "descriptions": {
+      "html5": "Certified in Web Development and Learned in Microcomputer Systems Degree",
+      "css3": "Certified in Web Development and Learned in Microcomputer Systems Degree",
+      "javascript": "Certified in Web Development",
+      "vuejs": "Certified in Web Development",
+      "nodejs": "Certified in Web Development",
+      "vuerouter": "Handling dynamic and nested routes with Vue Router.",
+      "axios": "HTTP client for easily consuming REST APIs.",
+      "git": "Version control and collaboration on projects."
+    },
+    "experiences": {
+      "html5": "I started with HTML in 2018, creating small web pages.",
+      "css3": "I started with CSS in 2018, styling small web pages.",
+      "javascript": "I started with JavaScript in 2024, building multiple APIs.",
+      "vuejs": "I started with Vue in 2024, working on a game project.",
+      "nodejs": "I started with Node in 2024, building different projects."
+    },
+    "projects": {
+      "html5": "Personal Portfolio",
+      "css3": "Personal Portfolio",
+      "javascript": "Personal Portfolio",
+      "vuejs": "Personal Portfolio",
+      "nodejs": "Personal Portfolio"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Interested in working together?",
+    "description": "I am available for freelance projects, job opportunities, or simply to talk about web development. Get in touch!",
+    "email": "Email",
+    "location": "Location",
+    "connect": "Connect with me",
+    "sendMessage": "Send me a message",
+    "yourName": "Your name",
+    "yourEmail": "your@email.com",
+    "subject": "Subject of your message",
+    "message": "Write your message here...",
+    "sendButton": "Send message",
+    "errorSendingMessage": "There was an error sending the message."
   }
 }

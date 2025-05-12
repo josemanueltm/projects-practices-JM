@@ -14,7 +14,8 @@ const selectSkill = (skill) => {
 
 const categories = [
   {
-    name: 'Desarrollo Web',
+    key: 'webDevelopment',
+    name: 'webDevelopment',
     skills: [
       {
         label: 'HTML5',
@@ -74,6 +75,7 @@ const categories = [
     ],
   },
   {
+    key: 'frameworks',
     name: 'Frameworks y Librerías',
     skills: [
       { label: 'Vue Router', icon: 'fa-solid fa-code-branch' },
@@ -81,8 +83,9 @@ const categories = [
     ],
   },
   {
+    key: 'others',
     name: 'Otros',
-    skilss: [
+    skills: [
       { label: 'Git', icon: 'fa-brands fa-git-alt' },
     ],
   },
@@ -97,17 +100,16 @@ onMounted(() => {
 })
 </script>
 
-<template>
+<<template>
   <section class="techstack-section" id="tech">
-    <h3 class="tech-title">&lt; Mis habilidades /&gt;</h3>
-    <p class="tech-subtitle">Tecnologías y herramientas que domino para desarrollar soluciones digitales efectivas y
-      escalables.</p>
+    <h3 class="tech-title">{{ $t('techstack.title') }}</h3>
+    <p class="tech-subtitle">{{ $t('techstack.subtitle') }}</p>
 
     <div class="techstack-wrapper">
       <div class="categories-panel">
         <div class="category" v-for="(cat, index) in categories" :key="index">
           <div class="category-header" @click="toggleCategory(index)">
-            <span>{{ cat.name }}</span>
+            <span>{{ $t(`techstack.categories.${cat.key}`) }}</span>
             <span>{{ openIndex === index ? '▲' : '▼' }}</span>
           </div>
           <div class="category-content" v-show="openIndex === index">
@@ -125,10 +127,13 @@ onMounted(() => {
           <i :class="selectedSkill.icon"></i>
           {{ selectedSkill.label }}
         </h4>
-        <p class="detail-subtitle">Desarrollo Web</p>
-
+        <p class="detail-subtitle">
+          {{ $t('techstack.descriptions.' + selectedSkill.label.toLowerCase().replace('.', '').replace(/\s/g, '')) }}
+        </p>
         <div v-if="selectedSkill.level" class="progress-section">
-          <span class="level-label">{{ selectedSkill.levelLabel }}</span>
+          <span class="level-label">
+            {{ $t('techstack.levels.' + selectedSkill.levelLabel.toLowerCase()) }}
+          </span>
           <span class="level-percent">{{ selectedSkill.level }}%</span>
           <div class="progress-bar">
             <div class="progress-fill" :style="{ width: selectedSkill.level + '%' }"></div>
@@ -136,22 +141,28 @@ onMounted(() => {
         </div>
 
         <div class="detail-block" v-if="selectedSkill.description">
-          <h5>📘 Descripción</h5>
-          <p>{{ selectedSkill.description }}</p>
+          <h5>📘 {{ $t('techstack.labels.description') }}</h5>
+          <p>
+            {{ $t('techstack.descriptions.' + selectedSkill.label.toLowerCase().replace('.', '').replace(/\s/g, '')) }}
+          </p>
         </div>
 
         <div class="detail-block" v-if="selectedSkill.projects?.length">
-          <h5>🔗 Proyectos relacionados</h5>
+          <h5>🔗 {{ $t('techstack.labels.relatedProjects') }}</h5>
           <ul>
             <li v-for="(project, i) in selectedSkill.projects" :key="i">
-              <a :href="project.link" target="_blank">{{ project.name }}</a>
+              <a :href="project.link" target="_blank">
+                {{ $t('techstack.projects.' + selectedSkill.label.toLowerCase().replace('.', '').replace(/\s/g, '')) }}
+              </a>
             </li>
           </ul>
         </div>
 
         <div class="detail-block" v-if="selectedSkill.experience">
-          <h5>💼 Experiencia</h5>
-          <p>{{ selectedSkill.experience }}</p>
+          <h5>💼 {{ $t('techstack.labels.experience') }}</h5>
+          <p>
+            {{ $t('techstack.experiences.' + selectedSkill.label.toLowerCase().replace('.', '').replace(/\s/g, '')) }}
+          </p>
         </div>
       </div>
     </div>

@@ -9,5 +9,76 @@
   "darkMode": {
     "light": "☀️",
     "dark": "🌙"
+  },
+  "about": {
+    "title": "José Manuel Torres Mena",
+    "description": "Soy desarrollador Junior con certificado en desarrollo web, con formación en el desarrollo de videojuegos y sistemas microinformáticos y redes. Me gusta mucho Backend y Frontend. He realizado varios proyectos con Express.js y también con Vue.js",
+    "webDeveloper": "Desarrollador Web",
+    "microcomputerTechnician": "Técnico Microinformático",
+    "gameDeveloper": "Desarrollador de Videojuegos",
+    "downloadCV": "Descargar CV"
+  },
+  "techstack": {
+    "title": "< Mis Habilidades />",
+    "subtitle": "Tecnologías con las que trabajo",
+    "categories": {
+      "webDevelopment": "Desarrollo Web",
+      "frameworks": "Frameworks y Librerías",
+      "others": "Otros"
+    },
+    "levels": {
+      "avanzado": "Avanzado",
+      "medio": "Medio"
+    },
+    "labels": {
+      "description": "Descripción",
+      "experience": "Experiencia",
+      "relatedProjects": "Proyectos relacionados"
+    },
+    "descriptions": {
+      "html5": "Certificado en Desarrollo Web y Aprendido en el Título de Sistema MicroInformáticos",
+      "css3": "Certificado en Desarrollo Web y Aprendido en el Título de Sistema MicroInformáticos",
+      "javascript": "Certificado en Desarrollo Web",
+      "vuejs": "Certificado en Desarrollo Web",
+      "nodejs": "Certificado en Desarrollo Web",
+      "vuerouter": "Manejo de rutas dinámicas y anidadas con Vue Router.",
+      "axios": "Cliente HTTP para consumir APIs REST de forma sencilla.",
+      "git": "Control de versiones y colaboración en proyectos."
+    },
+    "experiences": {
+      "html5": "Comencé con HTML en 2018, haciendo pequeñas paginas web.",
+      "css3": "Comencé con CSS en 2018, añadiendo estilos en pequeñas paginas web.",
+      "javascript": "Comencé con JavaScript en 2024, programando varias API.",
+      "vuejs": "Comencé con Vue en 2024, haciendo un proyecto de juegos.",
+      "nodejs": "Comencé con Node en 2024, haciendo diferentes proyecto.",
+      "vue router": "",
+      "git": "",
+      "axios": ""
+    },
+    "projects": {
+      "html5": "Portfolio Personal",
+      "css3": "Portfolio Personal",
+      "javascript": "Portfolio Personal",
+      "vuejs": "Portfolio Personal",
+      "nodejs": "Portfolio Personal",
+      "vue router": "",
+      "git": "",
+      "axios": ""
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Interesado en trabajar juntos?",
+    "description": "Estoy disponible para proyectos freelance, oportunidades de empleo o simplemente para conversar sobre desarrollo web. ¡Contáctame!",
+    "email": "Email",
+    "location": "Ubicación",
+    "connect": "Conéctate conmigo",
+    "sendMessage": "Envíame un mensaje",
+    "yourName": "Tu nombre",
+    "yourEmail": "tu@email.com",
+    "subject": "Asunto de tu mensaje",
+    "message": "Escribe tu mensaje aquí...",
+    "sendButton": "Enviar mensaje",
+    "errorSendingMessage": "Hubo un error al enviar el mensaje."
   }
 }

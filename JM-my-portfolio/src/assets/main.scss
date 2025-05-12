@@ -112,37 +112,6 @@ html {
     height: 40px;
     cursor: pointer;
   }
-
-
-  .language-switch {
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(to right, #6b21a8, #9333ea);
-    padding: 0.40rem 0.6rem;
-    margin: 10px;
-    border-radius: 0.5rem;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    gap: 1rem;
-  }
-
-  .lang-flag-btn {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-  }
-
-  .flag-icon {
-    width: 24px;
-    height: 16px;
-    object-fit: contain;
-    border-radius: 2px;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-  }
 }
 
 /* ABOUT */

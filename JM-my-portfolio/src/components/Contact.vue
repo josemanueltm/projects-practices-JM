@@ -1,5 +1,6 @@
 <script>
 import emailjs from 'emailjs-com'
+
 export default {
   name: "ContactSection",
   data() {
@@ -40,7 +41,7 @@ export default {
         })
         .catch((error) => {
           console.error("Error al enviar:", error)
-          alert("Hubo un error al enviar el mensaje.")
+          alert(this.$t('contact.errorSendingMessage'))  // Usamos traducción para el mensaje de error
         })
     }
   }
@@ -51,11 +52,10 @@ export default {
 
 <template>
   <section id="contact" class="contact-section">
-    <h2 class="section-title">&lt; Contacto /&gt;</h2>
-    <p class="section-subtitle"><strong>¿Interesado en trabajar juntos?</strong></p>
+    <h2 class="section-title">&lt; {{ $t('contact.title') }} /&gt;</h2> <!-- Traducido aquí -->
+    <p class="section-subtitle"><strong>{{ $t('contact.subtitle') }}</strong></p> <!-- Traducido aquí -->
     <p class="section-text">
-      Estoy disponible para proyectos freelance, oportunidades de empleo o simplemente para conversar sobre desarrollo
-      web. ¡Contáctame!
+      {{ $t('contact.description') }}
     </p>
 
     <div class="contact-container">
@@ -63,21 +63,20 @@ export default {
         <div class="info-box">
           <i class="fas fa-envelope icon"></i>
           <div>
-            <h4>Email</h4>
+            <h4>{{ $t('contact.email') }}</h4> <!-- Traducido aquí -->
             <p>josemanuelsmryoni@gmail.com</p>
           </div>
         </div>
         <div class="info-box">
           <i class="fas fa-map-marker-alt icon"></i>
           <div>
-            <h4>Ubicación</h4>
+            <h4>{{ $t('contact.location') }}</h4> <!-- Traducido aquí -->
             <p>Sevilla, España</p>
           </div>
         </div>
         <div class="info-box">
-          <h4>Conéctate conmigo</h4>
-          <div class=" social-icons-contact">
-
+          <h4>{{ $t('contact.connect') }}</h4> <!-- Traducido aquí -->
+          <div class="social-icons-contact">
             <a href="https://github.com/josemanueltm/projects-practices-JM" target="_blank"><i
                 class="fab fa-github"></i></a>
             <a href="mailto:josemanuelsmryoni@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -85,17 +84,17 @@ export default {
         </div>
       </div>
 
-
       <form class="contact-form" @submit.prevent="handleSubmit">
-        <h3>Envíame un mensaje</h3>
+        <h3>{{ $t('contact.sendMessage') }}</h3>
         <div class="form-row">
-          <input type="text" v-model="form.name" placeholder="Tu nombre" required />
-          <input type="email" v-model="form.email" placeholder="tu@email.com" required />
+          <input type="text" v-model="form.name" :placeholder="$t('contact.yourName')" required />
+          <input type="email" v-model="form.email" :placeholder="$t('contact.yourEmail')" required />
         </div>
-        <input type="text" v-model="form.subject" placeholder="Asunto de tu mensaje" required />
-        <textarea v-model="form.message" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
-        <button type="submit">Enviar mensaje</button>
+        <input type="text" v-model="form.subject" :placeholder="$t('contact.subject')" required />
+        <textarea v-model="form.message" :placeholder="$t('contact.message')" rows="5" required></textarea>
+        <button type="submit">{{ $t('contact.sendButton') }}</button>
       </form>
+
     </div>
   </section>
 </template>
