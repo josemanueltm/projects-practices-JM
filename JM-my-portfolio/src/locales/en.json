@@ -76,6 +76,7 @@
     "errorSendingMessage": "There was an error sending the message."
   },
   "projects": {
-    "title": "soon..."
+    "title": "soon...",
+    "titles": "My Projects"
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <section id="projects">
-    <h3 class="title-project">&lt; Mis Proyectos /&gt;</h3>
+    <h3 class="title-project">{{ $t('projects.titles') }}</h3>
     <div class="projects-container">
       <div class="project-card">
         <h4 class="project-title">{{ $t('projects.title') }}</h4>
