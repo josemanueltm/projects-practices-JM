@@ -29,7 +29,7 @@ export default {
           import.meta.env.VITE_EMAILJS_SERVICE_ID,
           import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
           templateParams,
-          import.meta.env.VITE_EMAILJS_PUBLIC_KEY    // <- reemplaza con tu Public Key
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         )
         .then(() => {
           this.form = {
@@ -41,7 +41,7 @@ export default {
         })
         .catch((error) => {
           console.error("Error al enviar:", error)
-          alert(this.$t('contact.errorSendingMessage'))  // Usamos traducción para el mensaje de error
+          alert(this.$t('contact.errorSendingMessage'))
         })
     }
   }
@@ -52,8 +52,8 @@ export default {
 
 <template>
   <section id="contact" class="contact-section">
-    <h2 class="section-title">&lt; {{ $t('contact.title') }} /&gt;</h2> <!-- Traducido aquí -->
-    <p class="section-subtitle"><strong>{{ $t('contact.subtitle') }}</strong></p> <!-- Traducido aquí -->
+    <h2 class="section-title">&lt; {{ $t('contact.title') }} /&gt;</h2>
+    <p class="section-subtitle"><strong>{{ $t('contact.subtitle') }}</strong></p>
     <p class="section-text">
       {{ $t('contact.description') }}
     </p>
@@ -63,19 +63,19 @@ export default {
         <div class="info-box">
           <i class="fas fa-envelope icon"></i>
           <div>
-            <h4>{{ $t('contact.email') }}</h4> <!-- Traducido aquí -->
+            <h4>{{ $t('contact.email') }}</h4>
             <p>josemanuelsmryoni@gmail.com</p>
           </div>
         </div>
         <div class="info-box">
           <i class="fas fa-map-marker-alt icon"></i>
           <div>
-            <h4>{{ $t('contact.location') }}</h4> <!-- Traducido aquí -->
+            <h4>{{ $t('contact.location') }}</h4>
             <p>Sevilla, España</p>
           </div>
         </div>
         <div class="info-box">
-          <h4>{{ $t('contact.connect') }}</h4> <!-- Traducido aquí -->
+          <h4>{{ $t('contact.connect') }}</h4>
           <div class="social-icons-contact">
             <a href="https://github.com/josemanueltm/projects-practices-JM" target="_blank"><i
                 class="fab fa-github"></i></a>

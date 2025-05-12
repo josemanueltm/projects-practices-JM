@@ -80,5 +80,8 @@
     "message": "Escribe tu mensaje aquí...",
     "sendButton": "Enviar mensaje",
     "errorSendingMessage": "Hubo un error al enviar el mensaje."
+  },
+  "projects": {
+    "title": "En breve..."
   }
 }

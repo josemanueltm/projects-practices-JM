@@ -10,7 +10,8 @@
       <button>{{ $t('about.gameDeveloper') }}</button>
     </div>
     <div class="cv-container">
-      <a href="/CV-Josemanuel-TorresMena.pdf" class="download-btn" download>
+      <a href="https://drive.google.com/file/d/14OwENh0twymWtcm-oAUzKr44NXPbi9vq/view?usp=sharing" class="download-btn"
+        download>
         <i class="fas fa-download"></i>
         <span>{{ $t('about.downloadCV') }}</span>
       </a>
