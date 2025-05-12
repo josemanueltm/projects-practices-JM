@@ -1,4 +1,6 @@
 import './assets/main.scss'
+import emailjs from '@emailjs/browser'
+
 
 import App from './App.vue'
 import { createApp } from 'vue'

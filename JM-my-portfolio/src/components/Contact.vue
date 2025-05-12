@@ -1,5 +1,6 @@
 <script>
-import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser'
+
 
 export default {
   name: "ContactSection",
