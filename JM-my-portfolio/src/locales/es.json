@@ -19,7 +19,7 @@
     "downloadCV": "Descargar CV"
   },
   "techstack": {
-    "title": "< Mis Habilidades />",
+    "title": "Mis Habilidades",
     "subtitle": "Tecnologías con las que trabajo",
     "categories": {
       "webDevelopment": "Desarrollo Web",
@@ -75,7 +75,7 @@
     "connect": "Conéctate conmigo",
     "sendMessage": "Envíame un mensaje",
     "yourName": "Tu nombre",
-    "yourEmail": "tu@email.com",
+    "yourEmail": "Tu correo electrónico",
     "subject": "Asunto de tu mensaje",
     "message": "Escribe tu mensaje aquí...",
     "sendButton": "Enviar mensaje",

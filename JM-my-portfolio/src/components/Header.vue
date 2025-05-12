@@ -15,10 +15,6 @@ const links = [
   { name: 'nav.contact', href: '#contact', icon: 'fas fa-file-alt' },
 ]
 
-const languages = [
-  { value: 'es', label: 'Español', flag: '/flags/es.png' },
-  { value: 'en', label: 'English', flag: '/flags/en.png' },
-]
 
 function setActive(linkName) {
   active.value = linkName

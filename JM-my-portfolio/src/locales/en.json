@@ -19,7 +19,7 @@
     "downloadCV": "Download CV"
   },
   "techstack": {
-    "title": "< My Skills />",
+    "title": "My Skills",
     "subtitle": "Technologies I work with",
     "categories": {
       "webDevelopment": "Web Development",
@@ -69,7 +69,7 @@
     "connect": "Connect with me",
     "sendMessage": "Send me a message",
     "yourName": "Your name",
-    "yourEmail": "your@email.com",
+    "yourEmail": "Your email",
     "subject": "Subject of your message",
     "message": "Write your message here...",
     "sendButton": "Send message",

@@ -102,7 +102,7 @@ onMounted(() => {
 
 <<template>
   <section class="techstack-section" id="tech">
-    <h3 class="tech-title">{{ $t('techstack.title') }}</h3>
+    <h3 class="tech-title">&lt; {{ $t('techstack.title') }}/&gt;</h3>
     <p class="tech-subtitle">{{ $t('techstack.subtitle') }}</p>
 
     <div class="techstack-wrapper">
