@@ -1,0 +1,136 @@
+body {
+  background-color: aquamarine;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.todolist-container {
+  background-color: rgba(255, 255, 255, 0.85);
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 10px;
+  width: 400px;
+
+  .title {
+    text-align: center;
+    font-size: 22px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid darkgray;
+    margin-bottom: 0;
+  }
+
+  .add-form-task {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid darkgray;
+    padding: 10px 0;
+
+    .add-form-task-fild-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .task-input {
+      width: 100%;
+      margin-right: 10px;
+      padding: 3px;
+    }
+
+    .task-input-error {
+      margin-top: 3px;
+      font-size: 10px;
+      color: #FF0000;
+    }
+
+    .add-task-btn {
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+  }
+
+  .todos-stats {
+    font-size: 12px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+
+    .todos-by-done {
+      display: flex;
+      gap: 5px;
+
+      .completed {
+        color: green;
+      }
+
+      .pending {
+        color: red;
+      }
+    }
+  }
+
+  .message-result {
+    background-color: cornsilk;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+    font-style: italic;
+    margin: 5px 0;
+  }
+
+  .tasks-container {
+    margin: 20px 0;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .task-item {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      padding: 5px;
+      border-radius: 5px;
+      background-color: lightblue;
+      cursor: pointer;
+      transition: background-color 1s;
+
+      &.completed {
+        text-decoration: line-through;
+      }
+
+      &:hover {
+        background-color: white;
+      }
+
+      .delete-task-btn {
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        transition: color 0.5s;
+        color: black;
+
+        &:hover {
+          color: red;
+        }
+      }
+    }
+
+    .no-items {
+      text-align: center;
+      list-style: none;
+      background-color: white;
+      text-transform: uppercase;
+      padding: 10px;
+      border-radius: 8px;
+
+      button {
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+      }
+    }
+  }
+}
