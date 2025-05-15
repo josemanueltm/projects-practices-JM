@@ -1,8 +1,8 @@
 <script setup>
-import CreateTask from './components/CreateTask.vue'
-import AddTask from './components/AddTask.vue'
 import { v4 as uuidv4 } from 'uuid'
 import { reactive, ref, computed, watch } from 'vue'
+import AddTask from './components/AddTask.vue'
+import CreateTask from './components/CreateTask.vue'
 
 const todos = reactive([
   { id: uuidv4(), title: 'Actualizar CV', done: false },
@@ -94,7 +94,7 @@ function clearMessage() {
 <template>
   <div class="todolist-container">
     <h1 class="title">Mis tareas</h1>
-    <CreateTaskForm ref="taskFormRef" v-model="taskName" @submitted="addTask" />
+    <CreateTask ref="taskFormRef" v-model="taskName" @submitted="addTask" />
     <div v-show="message" class="message-result">
       {{ message }}
     </div>
@@ -106,7 +106,7 @@ function clearMessage() {
       </div>
     </div>
     <ul class="tasks-container">
-      <TaskItem v-for="task in todos" :key="task.id" :task="task" @title-clicked="onTaskTitleClicked"
+      <AddTask v-for="task in todos" :key="task.id" :task="task" @title-clicked="onTaskTitleClicked"
         @delete-clicked="onTaskDeleteClicked" />
       <template v-if="!hasTodos">
         <li class="no-items">
