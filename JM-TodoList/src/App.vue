@@ -1,7 +1,92 @@
 <script setup>
 import CreateTask from './components/CreateTask.vue'
-import AddTask from './components/AddTask.vue';
+import AddTask from './components/AddTask.vue'
+import { v4 as uuidv4 } from 'uuid'
+import { reactive, ref, computed, watch } from 'vue'
 
+const todos = reactive([
+  { id: uuidv4(), title: 'Actualizar CV', done: false },
+  { id: uuidv4(), title: 'Trabajar', done: false }
+])
+const message = ref(null)
+const taskName = ref('')
+const taskRef = ref()
+
+const hasTodos = computed(() => {
+  return todosCount.value > 0
+})
+
+
+const todosCount = computed(() => {
+  return todos.length
+})
+const pendingTodosCount = computed(() => {
+  return todos.filter(item => item.done === false).length
+})
+const doneTodosCount = computed(() => {
+  return todos.filter(item => item.done === true).length
+})
+
+function toggleTaskDone(id) {
+  if (!id) return
+  const foundIndex = todos.findIndex(item => item.id === id)
+
+  if (foundIndex <= -1) return
+
+  todos[foundIndex].done = !todos[foundIndex].done
+  console.info(todos[foundIndex].done)
+}
+
+function addTask() {
+  console.info("añadimos una tarea.")
+  if (!taskName.value) {
+    console.warn('La tarea no tiene nombre')
+    return
+  }
+
+  todos.splice(0, 0, { id: uuidv4(), title: taskName.value, done: false })
+  taskName.value = ""
+  taskRef.value.focus()
+}
+
+function removeTask(id) {
+  if (!id) return
+  const foundIndex = todos.findIndex(item => item.id === id)
+
+  if (foundIndex <= -1) return
+
+  todos.splice(foundIndex, 1)
+}
+
+function focusOnInputField() {
+  console.info(taskFormRef.value)
+  taskFormRef.value?.focusInput()
+}
+
+watch(todosCount, (newValue, oldValue) => {
+  if (newValue > oldValue) {
+    message.value = "Tarea agregada correctamente."
+    clearMessage()
+  }
+  if (newValue < oldValue) {
+    message.value = "Tarea eliminada correctamente."
+    clearMessage()
+  }
+})
+
+function onTaskTitleClicked(task) {
+  toggleTaskDone(task?.id)
+}
+
+function onTaskDeleteClicked(task) {
+  removeTask(task?.id)
+}
+
+function clearMessage() {
+  setTimeout(() => {
+    message.value = ''
+  }, 3000)
+}
 
 
 </script>
