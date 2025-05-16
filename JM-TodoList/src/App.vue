@@ -4,7 +4,13 @@ import { reactive, ref, computed, watch } from 'vue'
 import AddTask from './components/AddTask.vue'
 import CreateTask from './components/CreateTask.vue'
 
-const todos = reactive([
+
+
+const STORAGE_KEY = 'todos-usuario'
+const storedTodos = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []
+
+
+const todos = reactive(storedTodos.length > 0 ? storedTodos : [
   { id: uuidv4(), title: 'Actualizar CV', done: false },
   { id: uuidv4(), title: 'Trabajar', done: false }
 ])
@@ -61,6 +67,13 @@ function removeTask(id) {
 function focusOnInputField() {
   taskFormRef.value?.focusInput()
 }
+
+watch(
+  todos, (newTodos) => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(newTodos))
+  },
+  { deep: true }
+)
 
 watch(todosCount, (newValue, oldValue) => {
   if (newValue > oldValue) {
