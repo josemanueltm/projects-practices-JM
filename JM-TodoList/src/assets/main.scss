@@ -46,9 +46,14 @@ body {
     }
 
     .task-input-error {
-      margin-top: 3px;
-      font-size: 10px;
+      margin-top: 10px;
+      padding: 5px;
+      background-color: #f4f4f4;
+      font-weight: bold;
+      font-size: 13px;
       color: #FF0000;
+      border: 3px solid black;
+      box-shadow: 4px 4px 0 rgb(94, 185, 192);
     }
 
     .add-task-btn {
@@ -61,7 +66,7 @@ body {
     }
 
     .add-task-btn:hover {
-      background: red;
+      background: rgb(0, 53, 97);
       color: white;
       box-shadow: 4px 4px 0 white;
     }
@@ -114,9 +119,9 @@ body {
     color: #222;
     padding: 10px;
     border-radius: 5px;
-    font-size: 12px;
+    font-size: 15px;
+    font-weight: bold;
     text-align: center;
-    font-style: italic;
     margin: 20px 0;
   }
 
@@ -164,15 +169,26 @@ body {
     .no-items {
       text-align: center;
       list-style: none;
-      background-color: white;
       text-transform: uppercase;
       padding: 10px;
-      border-radius: 8px;
+      border: 3px solid black;
+      box-shadow: 4px 4px 0 rgb(94, 185, 192);
+      background: #f4f4f4;
 
-      button {
+      .button-no-items {
+        background: white;
+        color: black;
+        font-weight: bold;
+        border: 3px solid black;
+        box-shadow: 4px 4px 0 rgb(94, 185, 192);
+        transition: all 0.3;
         cursor: pointer;
-        border: none;
-        border-radius: 5px;
+      }
+
+      .button-no-items:hover {
+        background: rgb(0, 53, 97);
+        color: white;
+        box-shadow: 4px 4px 0 white;
       }
     }
   }

@@ -39,7 +39,6 @@ function toggleTaskDone(id) {
 }
 
 function addTask() {
-  console.info("añadimos una tarea.")
   if (!taskName.value) {
     console.warn('La tarea no tiene nombre')
     return
@@ -110,7 +109,8 @@ function clearMessage() {
         @delete-clicked="onTaskDeleteClicked" />
       <template v-if="!hasTodos">
         <li class="no-items">
-          No hay tareas, pulsa <button @click="focusOnInputField">aquí</button> para agregar una.
+          No hay tareas, pulsa <button class="button-no-items" @click="focusOnInputField">aquí</button> para agregar
+          una.
         </li>
       </template>
     </ul>
