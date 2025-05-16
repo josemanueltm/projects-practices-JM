@@ -11,15 +11,16 @@ const todos = reactive([
 const message = ref(null)
 const taskName = ref('')
 const taskRef = ref()
+const taskFormRef = ref()
+
+const todosCount = computed(() => {
+  return todos.length
+})
 
 const hasTodos = computed(() => {
   return todosCount.value > 0
 })
 
-
-const todosCount = computed(() => {
-  return todos.length
-})
 const pendingTodosCount = computed(() => {
   return todos.filter(item => item.done === false).length
 })
@@ -59,7 +60,6 @@ function removeTask(id) {
 }
 
 function focusOnInputField() {
-  console.info(taskFormRef.value)
   taskFormRef.value?.focusInput()
 }
 
@@ -95,7 +95,7 @@ function clearMessage() {
   <div class="todolist-container">
     <h1 class="title">Mis tareas</h1>
     <CreateTask ref="taskFormRef" v-model="taskName" @submitted="addTask" />
-    <div v-show="message" class="message-result">
+    <div v-if="message" class="message-result">
       {{ message }}
     </div>
     <div v-if="hasTodos" class="todos-stats">

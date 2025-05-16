@@ -25,7 +25,7 @@ const taskRef = ref()
 const validationError = ref('')
 
 function onFormSubmit() {
-  if (model.value.length < props.minTaskLen) {
+  if (model.value.length < props.taskLenMin) {
     validationError.value = `El nombre de la tarea debe tener al menos ${props.taskLenMin} caracteres`
     clearValidationErrorMsg()
     return

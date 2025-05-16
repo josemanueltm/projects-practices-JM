@@ -7,7 +7,7 @@ const emit = defineEmits(['titleClicked', 'deleteClicked'])
 const props = defineProps({
   task: {
     type: Object,
-    requered: true
+    required: true
   }
 })
 
