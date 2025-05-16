@@ -13,7 +13,7 @@
             <i class="fab fa-github"></i>
           </a>
           <a href="https://jm-todolist.vercel.app/" target="_blank" aria-label="Demo en Vercel">
-            <img src="/public/img/vercel.png" alt="Demo Vercel" class="vercel-icon" />
+            <p class="vercel-demo">Demo</p>
           </a>
         </div>
       </div>
