@@ -99,7 +99,7 @@ function clearMessage() {
       {{ message }}
     </div>
     <div v-if="hasTodos" class="todos-stats">
-      <div>{{ todosCount }} tareas</div>
+      <div class=task-number>{{ todosCount }} tareas</div>
       <div class="todos-by-done">
         <div class="completed">Pendientes: {{ pendingTodosCount }}</div>
         <div class="pending">Completadas: {{ doneTodosCount }}</div>
