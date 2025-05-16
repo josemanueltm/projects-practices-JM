@@ -82,7 +82,7 @@
     "errorSendingMessage": "Hubo un error al enviar el mensaje."
   },
   "projects": {
-    "title": "En breve...",
+    "title": "To-Do-List",
     "titles": "Mis Proyectos"
   }
 }
