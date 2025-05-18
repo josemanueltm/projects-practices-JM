@@ -25,16 +25,22 @@ defineProps({
 .weather h2 {
   margin: 0;
   font-size: 1.5rem;
-  color: #0077ff;
+  color: #0077cc;
 }
 
 .weather p {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  margin: 0.4rem 0;
 }
 
 .weather img {
   width: 80px;
   margin-top: 10px;
+}
+
+.weather,
+.form input,
+.form button {
+  transition: all 0.3s ease-in-out;
 }
 </style>

@@ -72,5 +72,14 @@ body {
   width: 100%;
   max-width: 500px;
   text-align: center;
+  margin: 120px auto;
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 1rem;
+    margin: 0 1rem;
+  }
+
 }
 </style>

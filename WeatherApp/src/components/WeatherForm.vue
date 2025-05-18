@@ -48,4 +48,18 @@ button {
 button:hover {
   background-color: #005fcc;
 }
+
+@media (max-width: 500px) {
+
+  .form {
+    flex-direction: column;
+  }
+
+  .form input,
+  .form button {
+    width: 100%;
+    border-radius: 8px;
+    margin: 0.25rem 0;
+  }
+}
 </style>
