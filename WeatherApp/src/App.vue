@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import WeatherForm from './components/WeatherForm.vue'
 import WeatherResult from './components/WeatherResult.vue'
 
-const apiKey = '99d7dc568798d27e4f614cfb468aeb09'
+const apiKey = import.meta.env.VITE_WEATHER_API_KEY
 const units = 'metric'
 const lang = 'es'
 
