@@ -2,11 +2,16 @@ import { defineStore } from 'pinia'
 
 export const useNotesStore = defineStore('notes', {
   state: () => ({
-    notes: [],
-    tags: [],
+    notes: JSON.parse(localStorage.getItem('notes')) || [],
+    tags: JSON.parse(localStorage.getItem('tags')) || [],
   }),
 
   actions: {
+    saveToStorage() {
+      localStorage.setItem('notes', JSON.stringify(this.notes))
+      localStorage.setItem('tags', JSON.stringify(this.tags))
+    },
+
     addNote(note) {
       this.notes.push(note)
       note.tags.forEach(tag => {
@@ -14,16 +19,19 @@ export const useNotesStore = defineStore('notes', {
           this.tags.push(tag)
         }
       })
+      this.saveToStorage()
     },
 
     deleteNote(id) {
       this.notes = this.notes.filter(note => note.id !== id)
+      this.saveToStorage()
     },
 
     updateNote(updatedNote) {
       const index = this.notes.findIndex(note => note.id === updatedNote.id)
       if (index !== -1) {
         this.notes[index] = updatedNote
+        this.saveToStorage()
       }
     },
   },
