@@ -1,26 +1,61 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { useNotesStore } from '../store/notes'
 
 const store = useNotesStore()
 
+const props = defineProps({
+  noteToEdit: Object
+})
+
+const emit = defineEmits(['edited'])
+
 const title = ref('')
 const content = ref('')
 const tagsInput = ref('')
+const editingId = ref(null)
+
+watch(() => props.noteToEdit, (newNote) => {
+  if (newNote) {
+    title.value = newNote.title
+    content.value = newNote.content
+    tagsInput.value = newNote.tags.join(',')
+    editingId.value = newNote.id
+  }
+},
+  { immediate: true }
+)
 
 function submitNote() {
-  const tags = tagsInput.value.split('').map(tag => tag.trim()).filter(tag => tag !== '')
+  const tags = tagsInput.value.split(',').map(tag => tag.trim()).filter(tag => tag !== '')
 
-  sote.addNote({
-    id: Date.now(),
+  const note = {
+    id: editingId.value || Date.now(),
     title: title.value,
     content: content.value,
-    tags
-  })
+    tags,
+    favorite: props.noteToEdit ? props.noteToEdit.favorite : false
+  }
+
+  if (editingId.value) {
+    store.updateNote(note)
+    emit('edited')
+  } else {
+    store.addNote(note)
+  }
 
   title.value = ''
   content.value = ''
   tagsInput.value = ''
+  editingId.value = null
+}
+
+function cancelEdit() {
+  emit('edited', null)
+  title.value = ''
+  content.value = ''
+  tagsInput.value = ''
+  editingId.value = null
 }
 </script>
 
@@ -30,6 +65,7 @@ function submitNote() {
     <textarea v-model="content" placeholder="Contenido" required></textarea>
     <input v-model="tagsInput" type="text" placeholder="Etiquetas (separadas por coma)" required />
     <button type="submit">Agregar Nota</button>
+    <button type="button" @click="cancelEdit" v-if="noteToEdit">Cancelar edición</button>
   </form>
 </template>
 
@@ -57,5 +93,9 @@ function submitNote() {
   color: white;
   border-radius: 6px;
   cursor: pointer;
+}
+
+.note-form button:last-child {
+  background-color: #f44336;
 }
 </style>

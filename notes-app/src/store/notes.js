@@ -34,6 +34,14 @@ export const useNotesStore = defineStore('notes', {
         this.saveToStorage()
       }
     },
+
+    toggleFavorite(id) {
+      const note = this.notes.find(note => note.id === id)
+      if (note) {
+        note.favorite = !note.favorite
+        this.saveToStorage()
+      }
+    },
   },
 
   getters: {
@@ -46,6 +54,9 @@ export const useNotesStore = defineStore('notes', {
         note.title.toLowerCase().includes(query.toLowerCase()) ||
         note.content.toLowerCase().includes(query.toLowerCase())
       )
+    },
+    favoriteNotes: (state) => {
+      return state.notes.filter(note => note.favorite)
     }
   }
 })

@@ -2,7 +2,8 @@
 defineProps({
   note: Object
 })
-defineEmits(['edit', 'delete'])
+defineEmits(['edit', 'delete', 'toggle-favorite'])
+
 </script>
 
 <template>
@@ -10,6 +11,9 @@ defineEmits(['edit', 'delete'])
     <h2>{{ note.title }}</h2>
     <p>{{ note.content }}</p>
     <div class="actions">
+      <button @click="$emit('toggle-favorite', note.id)">
+        {{ note.favorite ? '⭐' : '🖤' }}
+      </button>
       <button @click="$emit('edit', note)">✏️</button>
       <button @click="$emit('delete', note.id)">🗑️</button>
     </div>

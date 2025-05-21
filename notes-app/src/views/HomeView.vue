@@ -4,10 +4,11 @@ import Notecard from '../components/Notecard.vue'
 import NoteForm from '../components/NoteForm.vue'
 import { useNotesStore } from '../store/notes'
 
-const store = useNotesStore
+const store = useNotesStore()
 
 const searchQuery = ref('')
 const selectedTag = ref('')
+const noteToEdit = ref(null)
 
 const filteredNotes = computed(() => {
   let notes = store.notes
@@ -28,8 +29,17 @@ function deleteNote(id) {
   store.deleteNote(id)
 }
 
+
+function toggleFavorite(id) {
+  store.toggleFavorite(id)
+}
+
 function editNote(note) {
-  console.log('editar Nota:', note)
+  noteToEdit.value = note
+}
+
+function clearEdit() {
+  noteToEdit.value = null
 }
 </script>
 
@@ -43,9 +53,10 @@ function editNote(note) {
       </option>
     </select>
   </div>
-  <NoteForm />
+  <NoteForm :noteToEdit="noteToEdit" @edited="clearEdit" />
   <div class="note-grid">
-    <Notecard v-for="note in filteredNotes" :key="note.id" :note="note" @delete="deleteNote" @edit="editNote" />
+    <Notecard v-for="note in filteredNotes" :key="note.id" :note="note" @delete="deleteNote" @edit="editNote"
+      @toggle-favorite="toggleFavorite" />
   </div>
 </template>
 
