@@ -60,42 +60,79 @@ function cancelEdit() {
 </script>
 
 <template>
-  <form @submit.prevent="submitNote" class="note-form">
-    <input v-model="title" type="text" placeholder="Título" required />
-    <textarea v-model="content" placeholder="Contenido" required></textarea>
-    <input v-model="tagsInput" type="text" placeholder="Etiquetas (separadas por coma)" required />
-    <button type="submit">Agregar Nota</button>
-    <button type="button" @click="cancelEdit" v-if="noteToEdit">Cancelar edición</button>
-  </form>
+  <div class="form-card">
+    <form @submit.prevent="submitNote">
+      <input v-model="title" type="text" placeholder="Título" required />
+      <textarea v-model="content" placeholder="Contenido..." rows="4" required></textarea>
+      <input v-model="tagsInput" type="text" placeholder="Etiquetas (separadas por coma)" required />
+      <div class="buttons">
+        <button type="submit">{{ editingId ? 'Guardar Cambios' : 'Agregar Nota' }}</button>
+        <button type="button" @click="cancelEdit" v-if="editingId">Cancelar</button>
+      </div>
+    </form>
+  </div>
 </template>
 
 <style scoped>
-.note-form {
+.form-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: left;
+  border: 2px solid #4caf50;
+  box-sizing: border-box;
+}
+
+h3 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+form {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  max-width: 400px;
-  margin: 1rem;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.note-form input,
-.note-form textarea {
-  padding: 0.5rem;
-  border: 1px solid #aaa;
-  border-radius: 6px;
+input,
+textarea {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.note-form button {
-  align-self: flex-start;
-  padding: 0.5rem 1rem;
-  border: none;
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+button[type='submit'] {
   background-color: #4caf50;
   color: white;
-  border-radius: 6px;
-  cursor: pointer;
+  border: none;
 }
 
-.note-form button:last-child {
+button[type='button'] {
   background-color: #f44336;
+  color: white;
+  border: none;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 </style>

@@ -1,9 +1,12 @@
 <script setup>
-defineProps({
-  note: Object
+const props = defineProps({
+  note: Object,
+  canEdit: {
+    type: Boolean,
+    default: false
+  }
 })
 defineEmits(['edit', 'delete', 'toggle-favorite'])
-
 </script>
 
 <template>
@@ -14,7 +17,7 @@ defineEmits(['edit', 'delete', 'toggle-favorite'])
       <button @click="$emit('toggle-favorite', note.id)">
         {{ note.favorite ? '⭐' : '🖤' }}
       </button>
-      <button @click="$emit('edit', note)">✏️</button>
+      <button v-if="canEdit" @click="$emit('edit', note)">✏️</button>
       <button @click="$emit('delete', note.id)">🗑️</button>
     </div>
   </div>
@@ -22,38 +25,46 @@ defineEmits(['edit', 'delete', 'toggle-favorite'])
 
 <style scoped>
 .note-card {
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  width: 280px;
   padding: 1rem;
-  margin: 1rem;
-  width: 250px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  border-radius: 16px;
+  color: rgb(53, 53, 53);
+  box-shadow: 0 0px 12px #4caf50;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.tags {
-  margin-top: 0.5rem;
+.note-card h2 {
+  text-align: center;
+  color: #4caf50;
 }
 
-.tag {
-  background-color: #eee;
-  border-radius: 4px;
-  padding: 2px 6px;
-  margin-right: 4px;
-  font-size: 0.8rem;
+.note-card p {
+  text-align: center;
+}
+
+.note-card:hover {
+  transform: translateY(-5px);
 }
 
 .actions {
-  margin-top: 1rem;
   display: flex;
-  justify-content: flex-end;
-  gap: 10px;
+  justify-content: space-between;
+  margin-top: 1rem;
 }
 
 .actions button {
   background: none;
   border: none;
+  font-size: 1.3rem;
   cursor: pointer;
-  font-size: 1.2rem;
+}
+
+.actions button:hover {
+  color: rgba(0, 0, 0, 0.356);
+  border: none;
+  cursor: pointer;
 }
 </style>
