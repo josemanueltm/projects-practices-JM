@@ -33,7 +33,7 @@
       <!-- Card 3 -->
       <div class="project-card">
         <h4 class="project-title">Notes-App</h4>
-        <img src="/public/img/weather.png" alt="Vista Previa de Weather APP" class="project-image">
+        <img src="/public/img/notes.png" alt="Vista Previa de Weather APP" class="project-image">
         <p class="project-description"> Aplicación web desarrollada con Vue.js Router y Node.js para escribir notas</p>
         <div class="project-links">
           <a href="https://github.com/josemanueltm/projects-practices-JM/tree/main/notes-app" target="_blank"
